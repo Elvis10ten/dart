@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.fluentbuild.apollo.views.models.UiState" />
+
+        <variable
+            name="model"
+            type="com.fluentbuild.apollo.views.signin.SignInViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <include layout="@layout/logo_56" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:gravity="center_horizontal"
+                android:text="@{model.hasSmsCodeBeenSent ? @string/verifyPhoneTitle : @string/signInTitle}"
+                tools:text="@string/signInTitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:gravity="center_horizontal"
+                android:text="@{model.hasSmsCodeBeenSent ? @string/verifyPhoneSubtitle(model.fullPhoneNumber) : @string/signInSubtitle}"
+                tools:text="@string/signInSubtitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="?colorError"
+                app:showUiErrorMessage="@{model.state}"
+                app:visible="@{(model.state instanceof UiState.Error)}"
+                tools:text="An error occurred processing your request."
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:visible="@{!model.hasSmsCodeBeenSent}">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_rememberLastSelection="true"
+                    app:ccp_countryPreference="us"
+                    app:ccp_showNameCode="false"
+                    app:ccp_showFlag="false"
+                    app:phoneNumber="@{model.fullPhoneNumber}"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneNumberInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/signInInputHintPhoneNumber"
+                    android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:showInputError="@{model.phoneNumberError}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="20"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/smsCodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/verifyInputHintOtp"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                app:visible="@{model.hasSmsCodeBeenSent}"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:showInputError="@{model.smsCodeError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:text="@{model.smsCode}"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/signInButton"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="20dp"
+                android:text="@{model.hasSmsCodeBeenSent ? @string/verifyPhoneAction : @string/signInAction}"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                style="@style/Widget.AppCompat.Button.Colored"
+                tools:text="Sign in"
+                />
+
+            <TextView
+                android:id="@+id/termsAndPrivacyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="@string/signInTermsAndPrivacy"
+                />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                style="@style/SpinKitView.MultiplePulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="?colorSecondary"
+                app:visible="@{(model.state instanceof UiState.Loading)}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

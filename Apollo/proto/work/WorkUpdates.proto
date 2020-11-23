@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package work;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkUpdatesProto";
+
+message WorkUpdates {
+    string workKey = 1;
+    bool isReAssigned = 2;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package tests;
+
+import "AtomicTest.proto";
+import "TestSummaryProfile.proto";
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "AtomicResultProto";
+
+message AtomicResult {
+    tests.AtomicTest atomicTest = 1;
+    tests.TestSummaryProfile summaryProfile = 2;
+    int64 timeStarted = 3;
+    Status status = 4;
+    int64 timeFinished = 5;
+    string stackTrace = 6;
+    repeated string runtimeLogs = 7;
+    string autoScreenShotNamePrefix = 8;
+    string profileFileName = 9;
+    string logFileName = 10;
+}
+
+enum Status {
+    STARTED = 0;
+    ERROR = 1;
+    FAILURE = 2;
+    PASSED = 3;
+    ASSUMPTION_FAILURE = 4;
+    IGNORED = 5;
+}

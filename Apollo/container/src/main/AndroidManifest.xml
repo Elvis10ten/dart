@@ -1,0 +1,26 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fluentbuild.apollo.container">
+
+    <uses-feature android:name="android.software.device_admin" />
+    <uses-feature android:name="android.software.managed_users" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+
+        <receiver
+            android:name=".ContainerAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/container_admin_info"/>
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.PROFILE_PROVISIONING_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

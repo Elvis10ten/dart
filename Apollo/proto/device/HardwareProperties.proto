@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package device;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "HardwarePropertiesProto";
+
+/** Represents hardware properties for a device. */
+message HardwareProperties {
+
+    /** The name of the overall product. */
+    string product = 1;
+    /** The name of the industrial design. */
+    string device = 2;
+    /** The name of the underlying board, like "goldfish". */
+    string board = 3;
+    /** The manufacturer of the product/hardware. */
+    string manufacturer = 4;
+    /** The consumer-visible brand with which the product/hardware will be associated, if any. */
+    string brand = 5;
+    /** The end-user-visible name for the end product. */
+    string model = 6;
+    /** The system bootloader version number. */
+    string bootloader = 7;
+    /** The name of the hardware (from the kernel command line or /proc). */
+    string hardware = 8;
+    /**
+     * An ordered list of ABIs supported by this device. The most preferred ABI is the first
+     * element in the list.
+     *
+     * See {@link #supported32BitAbis} and {@link #supported64BitAbis}.
+     */
+    repeated string supportedAbis = 10;
+    /**
+     * An ordered list of <b>32 bit</b> ABIs supported by this device. The most preferred ABI
+     * is the first element in the list.
+     *
+     * See {@link #supportedAbis} and {@link #supported64BitAbis}.
+     */
+    repeated string supported32BitAbis = 11;
+    /**
+     * An ordered list of <b>64 bit</b> ABIs supported by this device. The most preferred ABI
+     * is the first element in the list.
+     *
+     * See {@link #supportedAbis} and {@link #supported32BitAbis}.
+     */
+    repeated string supported64BitAbis = 12;
+    /**
+     * Returns the version string for the radio firmware.
+     May return null (if, for instance, the radio is not currently on).
+     */
+    string radioVersion = 13;
+}

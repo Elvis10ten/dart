@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "ResourceUsageStatsProto";
+
+message ResourceUsageStats {
+
+    int32 audioCount = 1;
+    int64 audioTimeMillis = 2;
+    int32 videoCount = 3;
+    int64 videoTimeMillis = 4;
+    int32 vibratorCount = 5;
+    int64 vibratorTimeMillis = 6;
+    int32 gpsSensorCount = 7;
+    int64 gpsSensorTimeMillis = 8;
+    int32 bluetoothCount = 9;
+    int64 bluetoothTimeMillis = 10;
+    int32 cameraCount = 11;
+    int64 cameraTimeMillis = 12;
+    int32 flashlightCount = 13;
+    int64 flashlightTimeMillis = 14;
+    int32 wifiScanCount = 15;
+    int64 wifiScanTimeMillis = 16;
+    int32 mobileRadioActiveCount = 17;
+    int64 mobileRadioActiveTimeMillis = 18;
+
+    int64 wifiMultiCastMillis = 19;
+    int64 bluetoothRxBytes = 20;
+    int64 bluetoothTxBytes = 21;
+    int64 bluetoothRxPackets = 22;
+    int64 bluetoothTxPackets = 23;
+
+    /**
+     * Key for a measurement of number of millseconds the wifi controller was
+     * idle but turned on on behalf of this uid.
+     */
+    int64 wifiIdleMillis = 31;
+
+    /**
+     * Key for a measurement of number of millseconds the bluetooth controller was
+     * idle but turned on on behalf of this uid.
+     */
+    int64 bluetoothIdleMillis = 33;
+
+    /**
+     * Key for a measurement of number of millseconds the mobile radio controller was
+     * idle but turned on on behalf of this uid.
+     */
+    int64 mobileIdleMillis = 35;
+
+    /**
+     * Key for a measurement of the estimated number of mA*ms used by this uid
+     * for wifi, that is to say the number of milliseconds of wifi activity
+     * times the mA current during that period.
+     */
+    int64 wifiPowerMams = 32;
+
+    /**
+    * Key for a measurement of the estimated number of mA*ms used by this uid
+    * for bluetooth, that is to say the number of milliseconds of activity
+    * times the mA current during that period.
+    */
+    int64 bluetoothPowerMams = 34;
+
+    /**
+     * Key for a measurement of the estimated number of mA*ms used by this uid
+     * for mobile data, that is to say the number of milliseconds of activity
+     * times the mA current during that period.
+     */
+    int64 mobilePowerMams = 36;
+
+    /**
+     * Key for a measurement of number of millseconds the wifi controller was
+     * active on behalf of this uid.
+     */
+    int64 wifiRunningMs = 37;
+
+    /**
+     * Key for a measurement of number of millseconds that this uid held a full wifi lock.
+     */
+    int64 wifiFullLockMs = 38;
+
+    map<string, Timer> jobs = 24;
+    map<string, Timer> sensors = 25;
+    map<string, Timer> syncs = 26;
+    map<string, Timer> wakeLocksDraw = 27;
+    map<string, Timer> wakeLocksFull = 28;
+    map<string, Timer> wakeLocksPartial = 29;
+    map<string, Timer> wakeLocksWindow = 30;
+
+    int32 relativeTime = 39;
+
+    message Timer {
+        int32 count = 1;
+        int64 timeMillis = 2;
+    }
+}

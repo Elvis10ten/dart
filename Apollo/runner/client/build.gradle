@@ -1,0 +1,7 @@
+apply from: ext.publishPlugin
+
+dependencies {
+    api project(":runner:base")
+    api project(":core:measurement")
+    api Dependencies.ANDROIDX_TEST_RUNNER
+}

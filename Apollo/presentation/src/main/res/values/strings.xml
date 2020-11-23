@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="authErrorInvalidPhoneNumber">@string/phoneNumberInvalid</string>
+    <string name="authErrorIncorrectOtp">The OTP you entered is incorrect.</string>
+    <string name="authErrorInternal">An internal error occurred while processing your request. Please try again in a few minutes.</string>
+    <string name="authErrorUnknown">An unknown error occurred while processing your request.</string>
+    <string name="baseErrorUnknown">An unknown error occurred while processing your request.</string>
+
+    <string name="contactSupportEmailSubject">Fluentbuild support</string>
+    <string name="companyName">Fluentbuild</string>
+
+    <string name="wizardDeviceProvisioningCancelled">You cancelled the device provisioning. Please click the button to start again.</string>
+
+    <string name="faqItemTitle1">How safe is the FluentBuild app?</string>
+    <string name="faqItemDescription1">Fluentbuild is completely secure. Your personal data or information is not shared with Fluentbuild or any of the tests run on your device.\n\nWe are built on top of a very secured Android container model that has been developed over several years.\n\nEach app publisher is verified and can be trusted.\n\nYou are totally safe.</string>
+    <string name="faqItemTitle2">How much does it cost?</string>
+    <string name="faqItemDescription2">It is completely free. You just need an Android phone (this one), an internet connection, and some battery juice.\n\nThat\'s all the requirements.</string>
+    <string name="faqItemTitle3">How much do I earn?</string>
+    <string name="faqItemDescription3">This varies for different test cases, what device you have and country.\n\nAfter you are signed in, the amount you make for each minute is shown on the home screen.\n\nYou can get more information on our pricing page.</string>
+    <string name="faqItemTitle4">Will this cause me to replace my device frequently?</string>
+    <string name="faqItemDescription4">We measure data from various sensors on your device. We will never attempt to run jobs on your device if we determine it is not safe to do so.\n\nFrom our research, device life span is not adversely affected from running jobs. We have several devices that have been running perfectly for over 3 years.</string>
+
+    <string name="enableScheduleAlertText">Enable job scheduling to automatically run jobs at specific intervals and earn more money.</string>
+    <string name="enableScheduleAlertActionText">Enable</string>
+</resources>

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "BinderStatsProto";
+
+message BinderStats {
+
+    int32 deathObjectCount = 1;
+
+    int32 localObjectCount = 2;
+
+    int32 proxyObjectCount = 3;
+
+    int32 receivedTransactions = 4;
+
+    int32 sentTransactions = 5;
+
+    int32 relativeTime = 6;
+}

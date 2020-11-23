@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package server;
+
+import "FileTransfer.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "SendFileWrapperProto";
+
+message SendFileWrapper {
+    server.Manifest manifest = 1;
+    server.ChunkResponse chunkResponse = 2;
+}

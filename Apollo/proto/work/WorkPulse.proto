@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package work;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkPulseProto";
+
+message WorkPulse {
+    string stageName = 1;
+}

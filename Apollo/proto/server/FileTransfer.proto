@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package server;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "FileTransferProto";
+
+message Manifest {
+
+    string workKey = 1;
+    repeated FileMeta fileMeta = 2;
+}
+
+message FileMeta {
+
+    string fileName = 1;
+    int64 lastModified = 2;
+    int32 size = 3;
+}
+
+message ChunkResponse {
+
+    bytes data = 1;
+    FileMeta fileMeta = 2;
+    Range range = 3;
+}
+
+message ChunkRequest {
+
+    FileMeta fileMeta = 1;
+    Range range = 2;
+}
+
+message Range {
+
+    int32 startOffset = 1;
+    int32 size = 2;
+}

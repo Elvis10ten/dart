@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package reports;
+
+import "AtomicTest.proto";
+import "AtomicResult.proto";
+import "TestSummaryProfile.proto";
+import "Artifact.proto";
+
+option java_package = "com.fluentbuild.reports";
+option java_outer_classname = "TestDetailsProto";
+
+message TestDetails {
+
+    tests.AtomicTest atomicTest = 1;
+    tests.TestSummaryProfile summaryProfile = 2;
+    tests.Status status = 3;
+
+    repeated tests.Artifact screenshots = 4;
+    tests.Artifact video = 6;
+    repeated tests.Artifact others = 5;
+    repeated RetryDetails retries = 10;
+
+    double approximateCost = 7;
+    string currencySymbol = 8;
+
+    string stackTrace = 9;
+}
+
+message RetryDetails {
+    tests.TestSummaryProfile summaryProfile = 1;
+    tests.Status status = 2;
+
+    repeated tests.Artifact screenshots = 3;
+    repeated tests.Artifact others = 4;
+
+    double approximateCost = 5;
+    string currencySymbol = 6;
+
+    string stackTrace = 7;
+}

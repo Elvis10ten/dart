@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "GcStatsProto";
+
+message GcStats {
+
+    /** The number of garbage collection runs. */
+    int32 runCount = 1;
+
+    /** The total duration of garbage collection runs in ms. */
+    int32 runTotalDuration = 2;
+
+    /** The total number of bytes that the application allocated. */
+    int64 totalBytesAllocated = 3;
+
+    /** The total number of bytes that garbage collection reclaimed. */
+    int64 totalBytesFreed = 4;
+
+    /** The number of blocking garbage collection runs. */
+    int32 blockingRunCount = 5;
+
+    /** The total duration of blocking garbage collection runs in ms. */
+    int32 blockingRunTotalDuration = 6;
+
+    int32 relativeTime = 9;
+}

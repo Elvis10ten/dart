@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package device;
+
+import "OsProperties.proto";
+import "HardwareProperties.proto";
+import "DeviceState.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "DevicePropertiesProto";
+
+/** Holds all the properties about a device including transient states */
+message DeviceProperties {
+
+    device.HardwareProperties hardwareProperties = 1;
+    device.OsProperties osProperties = 2;
+    /**
+    A map of features that are available on the system to the version.
+    This is the maximum version of this feature supported by the device. The device implicitly supports all older versions of this feature.
+    The version information is only available from Android Nougat and above, on older versions the value is zero.
+    */
+    map<string, int32> availableFeatures = 3;
+    int32 openGleVersion = 4;
+    device.DeviceState currentState = 5;
+    string deviceKey = 6;
+}

@@ -1,0 +1,315 @@
+
+£ó
+:
+org.mozilla.focus.debug.testorg.mozilla.focus.Angelina³
+[
+<org.mozilla.focus.activity.AccessAboutAndYourRightsPagesTestAboutAndYourRightsPagesTest (ãºü_2Óorg.junit.AssumptionViolatedException: got: <false>, expected: is <true>
+	at org.junit.Assume.assumeThat(Assume.java:95)
+	at org.junit.Assume.assumeTrue(Assume.java:41)
+	at org.mozilla.focus.activity.AccessAboutAndYourRightsPagesTest$1.beforeActivityLaunched(AccessAboutAndYourRightsPagesTest.java:54)
+	at androidx.test.rule.ActivityTestRule.launchActivity(ActivityTestRule.java:355)
+	at androidx.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:529)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.runner.AndroidJUnit4.run(AndroidJUnit4.java:104)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:392)
+	at com.fluentbuild.apollo.runner.client.androidx.AndroidXJUnitRunner.onStart(AndroidXJUnitRunner.kt:24)
+	at org.mozilla.focus.Angelina.onStart(Angelina.kt:25)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2214)
+B%f0f6d0e0-2577-4c7f-8615-1b10bd5f03b03J'57881027-d80e-40e0-abac-c53c79957dcb2.sR'8ad61360-adad-4a8a-9e6f-e7bed716f10f1.lÓ¶
+G
+/org.mozilla.focus.activity.FirstRunDialogueTestFirstRunDialogueTest (•Úü_2†µandroidx.test.espresso.AmbiguousViewMatcherException: 'with id: org.mozilla.focus.debug:id/next' matches multiple views in the hierarchy.
+Problem views are marked with '****MATCHES****' below.
+
+View Hierarchy:
++>DecorView{id=-1, visibility=VISIBLE, width=1080, height=2220, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params={(0,0)(fillxfill) sim={state=always_hidden adjust=resize} ty=BASE_APPLICATION wanim=0x1030305
+  fl=81810100
+  pfl=10020000 naviIconColor=0}, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++->LinearLayout{id=-1, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@c449211, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++-->ViewStub{id=16908694, res-name=action_mode_bar_stub, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@7d98f76, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++-->FrameLayout{id=-1, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@c9c3977, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++--->FitWindowsLinearLayout{id=2131296303, res-name=action_bar_root, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@5cf3e4d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++---->ViewStubCompat{id=2131296315, res-name=action_mode_bar_stub, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@ac72d02, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++---->ContentFrameLayout{id=16908290, res-name=content, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@810f613, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++----->FrameLayout{id=2131296377, res-name=container, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@fe4c050, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++------>FrameLayout{id=2131296334, res-name=backgroundView, visibility=VISIBLE, width=1080, height=2094, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@1dd917c, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=5} 
+|
++------->ResizableKeyboardLinearLayout{id=2131296480, res-name=keyboardLinearLayout, visibility=VISIBLE, width=1080, height=1882, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@f92ea05, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=212.0, child-count=2} 
+|
++-------->AppCompatImageView{id=-1, desc=Firefox Focus, visibility=VISIBLE, width=473, height=137, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@9b95a5a, tag=null, root-is-layout-requested=false, has-input-connection=false, x=303.0, y=812.0} 
+|
++-------->AppCompatTextView{id=2131296463, res-name=homeViewTipsLabel, visibility=VISIBLE, width=1080, height=121, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=true, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@2304968, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=949.0, text=Open a link in a new tab
+ Long-press any link on a page, input-type=0, ime-target=true, has-links=false} 
+|
++------->FrameLayout{id=2131296735, res-name=urlInputLayout, visibility=VISIBLE, width=1080, height=212, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@35d2181, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3} 
+|
++-------->View{id=2131296716, res-name=toolbarBackgroundView, visibility=VISIBLE, width=1080, height=212, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@9a2c226, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++-------->View{id=2131296717, res-name=toolbarBottomBorder, visibility=VISIBLE, width=1080, height=3, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@d86e67, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=209.0} 
+|
++-------->FrameLayout{id=2131296734, res-name=urlInputContainerView, visibility=VISIBLE, width=1038, height=105, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@8749414, tag=null, root-is-layout-requested=false, has-input-connection=false, x=21.0, y=86.0, child-count=2} 
+|
++--------->View{id=2131296733, res-name=urlInputBackgroundView, visibility=VISIBLE, width=1038, height=105, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@a3954bd, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++--------->LinearLayout{id=-1, visibility=VISIBLE, width=1038, height=105, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@bf38a03, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3} 
+|
++---------->InlineAutocompleteEditText{id=2131296736, res-name=urlView, visibility=VISIBLE, width=933, height=105, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@c10dd80, tag=null, root-is-layout-requested=false, has-input-connection=true, editor-info=[inputType=0x80011 imeOptions=0x1b000002 privateImeOptions=null actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=Search or enter address label=null packageName=null fieldId=0 fieldName=null extras=null hintLocales=null contentMimeTypes=null ], x=0.0, y=0.0, text=, hint=Search or enter address, input-type=524305, ime-target=false, has-links=false} 
+|
++---------->AppCompatImageButton{id=2131296367, res-name=clearView, desc=Clear input, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@7ab7fb9, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++---------->IndicatorMenuButton{id=2131296495, res-name=menuView, desc=More options button, visibility=VISIBLE, width=105, height=105, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@91ac35f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=933.0, y=0.0, child-count=2} 
+|
++----------->AppCompatImageView{id=-1, visibility=VISIBLE, width=105, height=105, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@26651ac, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++----------->AppCompatImageView{id=2131296408, res-name=dot, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@97b5e75, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++------->View{id=2131296403, res-name=dismissView, desc=Dismiss, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@3cd0e0a, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++------->AppCompatTextView{id=2131296321, res-name=addToAutoComplete, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@e52367b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Add link to autocomplete, input-type=0, ime-target=false, has-links=false} 
+|
++------->FrameLayout{id=2131296628, res-name=searchViewContainer, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@8306cf1, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++-------->ResizableKeyboardLinearLayout{id=-1, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@34de72d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3} 
+|
++--------->ConstraintLayout{id=2131296422, res-name=enable_search_suggestions_container, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@28c54ae, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=4} 
+|
++---------->AppCompatTextView{id=2131296424, res-name=enable_search_suggestions_title, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@421424f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Would you like to turn on search suggestions?, input-type=0, ime-target=false, has-links=false} 
+|
++---------->AppCompatTextView{id=2131296423, res-name=enable_search_suggestions_subtitle, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@c777ddc, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=To get search suggestions, Firefox Focus needs to send what you type in the address bar to the search engine youâ€™ve chosen. Learn more., input-type=0, ime-target=false, has-links=false} 
+|
++---------->AppCompatButton{id=2131296402, res-name=disable_search_suggestions_button, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@b61cee5, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=No, input-type=0, ime-target=false, has-links=false} 
+|
++---------->AppCompatButton{id=2131296421, res-name=enable_search_suggestions_button, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@fcd0dba, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Yes, input-type=0, ime-target=false, has-links=false} 
+|
++--------->ConstraintLayout{id=2131296573, res-name=no_suggestions_container, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@ce57461, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++---------->AppCompatTextView{id=2131296574, res-name=no_suggestions_message, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@b2e4b86, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Some search engines cannot show suggestions., input-type=0, ime-target=false, has-links=false} 
+|
++---------->AppCompatButton{id=2131296404, res-name=dismiss_no_suggestions_message, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@d5d2c47, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=Dismiss, input-type=0, ime-target=false, has-links=false} 
+|
++--------->NestedScrollView{id=-1, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@ea3f59d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++---------->LinearLayout{id=-1, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@6f91be0, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++----------->AppCompatTextView{id=2131296627, res-name=searchView, visibility=VISIBLE, width=0, height=0, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@dcf4e99, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=â€¦, input-type=0, ime-target=false, has-links=false} 
+|
++----------->RecyclerView{id=2131296683, res-name=suggestionList, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@e8d455e, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=0} 
+|
++------>FrameLayout{id=2131296333, res-name=background, visibility=VISIBLE, width=1080, height=2094, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@1fd5d3f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++------->AppCompatButton{id=2131296658, res-name=skip, visibility=VISIBLE, width=231, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@904160c, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=63.0, text=Skip, input-type=0, ime-target=false, has-links=false} 
+|
++------->LinearLayout{id=-1, visibility=VISIBLE, width=1080, height=2031, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@ebd3b55, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=63.0, child-count=2} 
+|
++-------->ViewPager{id=2131296589, res-name=pager, desc=Power up your privacyTake private browsing to the next level. Block ads and other content that can track you across sites and bog down page load times., visibility=VISIBLE, width=1080, height=1884, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@764596a, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=63.0, child-count=2} 
+|
++--------->FrameLayout{id=-1, visibility=VISIBLE, width=1080, height=1884, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.viewpager.widget.ViewPager$LayoutParams@af48e5b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++---------->FirstrunCardView{id=-1, visibility=VISIBLE, width=788, height=1208, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@2e286f8, tag=null, root-is-layout-requested=false, has-input-connection=false, x=146.0, y=338.0, child-count=1} 
+|
++----------->LinearLayout{id=-1, visibility=VISIBLE, width=788, height=1208, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@b6337d1, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++------------>ScrollView{id=-1, visibility=VISIBLE, width=788, height=1082, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@e6a236, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++------------->LinearLayout{id=-1, visibility=VISIBLE, width=788, height=1082, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@363b537, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=4} 
+|
++-------------->AppCompatImageView{id=2131296474, res-name=image, visibility=VISIBLE, width=777, height=557, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@2351aa4, tag=null, root-is-layout-requested=false, has-input-connection=false, x=5.0, y=0.0} 
+|
++-------------->AppCompatTextView{id=2131296711, res-name=title, visibility=VISIBLE, width=662, height=70, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@d92800d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=63.0, y=620.0, text=Power up your privacy, input-type=0, ime-target=false, has-links=false} 
+|
++-------------->AppCompatTextView{id=2131296699, res-name=text, visibility=VISIBLE, width=662, height=232, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@172abc2, tag=null, root-is-layout-requested=false, has-input-connection=false, x=63.0, y=732.0, text=Take private browsing to the next level. Block ads and other content that can track you across sites and bog down page load times., input-type=0, ime-target=false, has-links=false} 
+|
++-------------->View{id=-1, visibility=VISIBLE, width=788, height=118, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@8346dd3, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=964.0} 
+|
++------------>AppCompatButton{id=2131296570, res-name=next, visibility=VISIBLE, width=788, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@bfb3d10, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1082.0, text=Next, input-type=0, ime-target=false, has-links=false} ****MATCHES****
+|
++--------->FrameLayout{id=-1, visibility=VISIBLE, width=1080, height=1884, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=androidx.viewpager.widget.ViewPager$LayoutParams@f41009, tag=null, root-is-layout-requested=false, has-input-connection=false, x=1080.0, y=0.0, child-count=1} 
+|
++---------->FirstrunCardView{id=-1, visibility=VISIBLE, width=788, height=1208, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@4c3c20e, tag=null, root-is-layout-requested=false, has-input-connection=false, x=146.0, y=338.0, child-count=1} 
+|
++----------->LinearLayout{id=-1, visibility=VISIBLE, width=788, height=1208, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@14e142f, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=2} 
+|
++------------>ScrollView{id=-1, visibility=VISIBLE, width=788, height=1082, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@3bf1a3c, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=1} 
+|
++------------->LinearLayout{id=-1, visibility=VISIBLE, width=788, height=1082, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@8c4a3c5, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=4} 
+|
++-------------->AppCompatImageView{id=2131296474, res-name=image, visibility=VISIBLE, width=777, height=557, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@4fdf11a, tag=null, root-is-layout-requested=false, has-input-connection=false, x=5.0, y=0.0} 
+|
++-------------->AppCompatTextView{id=2131296711, res-name=title, visibility=VISIBLE, width=662, height=70, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@3b1c44b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=63.0, y=620.0, text=Your search, your way, input-type=0, ime-target=false, has-links=false} 
+|
++-------------->AppCompatTextView{id=2131296699, res-name=text, visibility=VISIBLE, width=662, height=173, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@9819e28, tag=null, root-is-layout-requested=false, has-input-connection=false, x=63.0, y=732.0, text=Searching for something different? Choose another default search engine in Settings., input-type=0, ime-target=false, has-links=false} 
+|
++-------------->View{id=-1, visibility=VISIBLE, width=788, height=177, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@550b741, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=905.0} 
+|
++------------>AppCompatButton{id=2131296570, res-name=next, visibility=VISIBLE, width=788, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@87a04e6, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1082.0, text=Next, input-type=0, ime-target=false, has-links=false} ****MATCHES****
+|
++-------->TabLayout{id=2131296688, res-name=tabs, visibility=VISIBLE, width=1080, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@a6674d4, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1947.0, child-count=1} 
+|
++--------->SlidingTabIndicator{id=-1, visibility=VISIBLE, width=1080, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@530867d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=4} 
+|
++---------->TabView{id=-1, visibility=VISIBLE, width=64, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=true, layout-params=android.widget.LinearLayout$LayoutParams@200a40, tag=null, root-is-layout-requested=false, has-input-connection=false, x=412.0, y=0.0, child-count=2} 
+|
++----------->AppCompatImageView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=true, layout-params=android.widget.LinearLayout$LayoutParams@e440d79, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++----------->AppCompatTextView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=true, layout-params=android.widget.LinearLayout$LayoutParams@3aacabe, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=, input-type=0, ime-target=false, has-links=false} 
+|
++---------->TabView{id=-1, visibility=VISIBLE, width=64, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@a6f0835, tag=null, root-is-layout-requested=false, has-input-connection=false, x=476.0, y=0.0, child-count=2} 
+|
++----------->AppCompatImageView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@3c4d4ca, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++----------->AppCompatTextView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@1e0563b, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=, input-type=0, ime-target=false, has-links=false} 
+|
++---------->TabView{id=-1, visibility=VISIBLE, width=64, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@4c37396, tag=null, root-is-layout-requested=false, has-input-connection=false, x=540.0, y=0.0, child-count=2} 
+|
++----------->AppCompatImageView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@741b17, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++----------->AppCompatTextView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@c7abb04, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=, input-type=0, ime-target=false, has-links=false} 
+|
++---------->TabView{id=-1, visibility=VISIBLE, width=64, height=42, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@c1551b3, tag=null, root-is-layout-requested=false, has-input-connection=false, x=604.0, y=0.0, child-count=2} 
+|
++----------->AppCompatImageView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@76a8370, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0} 
+|
++----------->AppCompatTextView{id=-1, visibility=GONE, width=0, height=0, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=true, is-selected=false, layout-params=android.widget.LinearLayout$LayoutParams@50646e9, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, text=, input-type=0, ime-target=false, has-links=false} 
+|
++->View{id=16908336, res-name=navigationBarBackground, visibility=VISIBLE, width=1080, height=126, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, layout-params=android.widget.FrameLayout$LayoutParams@e7d5f6e, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=2094.0} 
+|
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+	at java.lang.Thread.getStackTrace(Thread.java:1720)
+	at androidx.test.espresso.base.DefaultFailureHandler.getUserFriendlyError(DefaultFailureHandler.java:96)
+	at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:59)
+	at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:322)
+	at androidx.test.espresso.ViewInteraction.desugaredPerform(ViewInteraction.java:178)
+	at androidx.test.espresso.ViewInteraction.perform(ViewInteraction.java:119)
+	at org.mozilla.focus.activity.FirstRunDialogueTest.FirstRunDialogueTest(FirstRunDialogueTest.java:67)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at androidx.test.internal.runner.junit4.statement.RunAfters.evaluate(RunAfters.java:61)
+	at androidx.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:531)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.runner.AndroidJUnit4.run(AndroidJUnit4.java:104)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:392)
+	at com.fluentbuild.apollo.runner.client.androidx.AndroidXJUnitRunner.onStart(AndroidXJUnitRunner.kt:24)
+	at org.mozilla.focus.Angelina.onStart(Angelina.kt:25)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2214)
+B%2539a80e-212c-40c5-9571-d9f45d2011dc9J'6bfc3107-25c7-4e40-be0d-2f72c9481ee58.sR'4520d49c-27b1-439f-947f-e403c06063e57.l²
+H
++org.mozilla.focus.activity.MultitaskingTesttestVisitingMultipleSites (úÝü_2âorg.junit.AssumptionViolatedException: got: <false>, expected: is <true>
+	at org.junit.Assume.assumeThat(Assume.java:95)
+	at org.junit.Assume.assumeTrue(Assume.java:41)
+	at org.junit.Assume.assumeFalse(Assume.java:48)
+	at org.mozilla.focus.activity.MultitaskingTest$1.beforeActivityLaunched(MultitaskingTest.java:73)
+	at androidx.test.rule.ActivityTestRule.launchActivity(ActivityTestRule.java:355)
+	at androidx.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:529)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.runner.AndroidJUnit4.run(AndroidJUnit4.java:104)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:392)
+	at com.fluentbuild.apollo.runner.client.androidx.AndroidXJUnitRunner.onStart(AndroidXJUnitRunner.kt:24)
+	at org.mozilla.focus.Angelina.onStart(Angelina.kt:25)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2214)
+B&ec68ce71-6904-4a69-815c-6a44013922b215J(a9bc0f81-0e82-44b5-8e1a-08def355aa1914.sR(f450bd6b-c58f-4d8b-a58e-3f274f3f9b7113.l¢
+;
+(org.mozilla.focus.activity.CustomTabTesttestCustomTabUI (êòü_2ßjava.lang.NullPointerException: Attempt to invoke virtual method 'void org.mozilla.focus.activity.IntentReceiverActivity.finishAndRemoveTask()' on a null object reference
+	at org.mozilla.focus.activity.CustomTabTest.tearDown(CustomTabTest.java:79)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at androidx.test.internal.runner.junit4.statement.RunAfters.evaluate(RunAfters.java:80)
+	at androidx.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:531)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.runner.AndroidJUnit4.run(AndroidJUnit4.java:104)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:392)
+	at com.fluentbuild.apollo.runner.client.androidx.AndroidXJUnitRunner.onStart(AndroidXJUnitRunner.kt:24)
+	at org.mozilla.focus.Angelina.onStart(Angelina.kt:25)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2214)
+B&7d79273d-84f5-49f0-9051-b22b7c88220421J(4bb63103-f422-4f7f-9ee2-939f4f112bbd20.sR(3a5d35fa-6f69-41e2-90e6-86235f1af5c219.l"e6eae2822e07e3f7

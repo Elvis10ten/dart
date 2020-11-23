@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "BatteryStatsProto";
+
+/**
+ * Remaining battery capacity as an integer percentage of total capacity
+ * (with no fractional part).
+ */
+message BatteryStats {
+
+    /** Boolean indicating whether a battery is present. */
+    bool isPresent = 1;
+
+    Health health = 2;
+
+    int32 levelPercentage = 3;
+
+    /** Integer containing the current battery voltage level. */
+    int32 voltage = 4;
+
+    /** Integer containing the current battery temperature in Celsius. */
+    float temperatureCelsius = 5;
+
+    /** String describing the technology of the current battery */
+    string technology = 6;
+
+    Status status = 7;
+
+    PowerSource powerSource = 8;
+
+    enum Status {
+
+        NO_STATUS = 0;
+
+        CHARGING = 1;
+
+        DISCHARGING = 2;
+
+        NOT_CHARGING = 3;
+
+        FULL = 4;
+    }
+
+    enum Health {
+
+        NO_HEALTH = 0;
+
+        GOOD = 1;
+
+        OVERHEAT = 2;
+
+        DEAD = 3;
+
+        OVER_VOLTAGE = 4;
+
+        UNSPECIFIED_FAILURE = 5;
+
+        COLD = 6;
+    }
+
+    enum PowerSource {
+
+        NO_SOURCE = 0;
+
+        ON_BATTERY = 1;
+
+        AC_CHARGER = 2;
+
+        USB_PORT = 3;
+
+        WIRELESS = 4;
+    }
+}

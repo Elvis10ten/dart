@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fluentbuild</string>
+
+    <string name="runtimeNotificationTitle">Fluentbuild Runtime</string>
+    <string name="runtimeNotificationChannelTitle">Runtime</string>
+    <string name="runtimeNotificationChannelDescription">Fluentbuild runtime notification</string>
+
+    <string name="descRuntimeService">Fluentbuild runtime service</string>
+    <string name="descRunnerService">Fluentbuild runner service</string>
+    <string name="runtimeGenericError">An error occurred running the Fluentbuild Runtime</string>
+</resources>

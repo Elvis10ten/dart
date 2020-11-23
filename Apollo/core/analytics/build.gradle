@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(":foundation")
+    implementation Dependencies.JAKE_TIMBER
+    implementation Dependencies.FIREBASE_ANALYTICS
+    implementation Dependencies.FIREBASE_CRASHLYTICS
+    implementation Dependencies.FIREBASE_CRASHLYTICS_NDK
+}

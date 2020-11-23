@@ -1,0 +1,6 @@
+dependencies {
+    api project(":runtime")
+    implementation project(":views")
+
+    implementation Dependencies.JAKE_TIMBER
+}

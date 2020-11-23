@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.jacoco:org.jacoco.core:0.8.0'
+    }
+}
+
+apply plugin: 'jacoco'
+
+android {
+
+    defaultConfig {
+        applicationId "com.fluentbuild.apollo.testsample"
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    implementation Dependencies.ANDROIDX_CONSTRAINT_LAYOUT
+    implementation Dependencies.ANDROID_MATERIAL_COMPONENTS
+    implementation 'com.jaredrummler:android-processes:1.1.1'
+
+    implementation Dependencies.JAKE_TIMBER
+    implementation Dependencies.GSON
+    api project(":runner:base")
+    api project(":runner:server")
+
+    implementation 'com.google.android.gms:play-services-base:17.2.1'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    testImplementation Dependencies.JUNIT
+    androidTestImplementation Dependencies.ANDROIDX_JUNITX
+    androidTestImplementation Dependencies.ANDROIDX_EXPRESSO_CORE
+    androidTestImplementation Dependencies.ANDROIDX_UI_AUTOMATOR
+    androidTestImplementation Dependencies.ANDROIDX_ORCHESTRATOR
+    androidTestImplementation Dependencies.ANDROIDX_TEST_CORE_KTX
+    androidTestImplementation Dependencies.ANDROIDX_JUNIT_EXT_KTX
+    androidTestImplementation "org.jacoco:org.jacoco.agent:0.7.9"
+    androidTestImplementation "org.jacoco:org.jacoco.report:0.7.9"
+    androidTestImplementation project(":runner:client")
+}

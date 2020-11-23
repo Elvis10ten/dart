@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package device;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "OsPropertiesProto";
+
+/** Represents OS properties for a device. */
+message OsProperties {
+
+    /**
+     * The SDK version of the software currently running on this hardware device.
+     * This value never changes while a device is booted, but it may
+     * increase when the hardware manufacturer provides an OTA update.
+     * <p>
+     * Possible values are defined in {@link android.os.Build.VERSION_CODES}.
+     */
+    int32 sdkNumber = 1;
+    /**
+     * The developer preview revision of a pre-release SDK.
+     This value will always be <code>0</code> on production platform builds/devices.
+     *
+     * <p>When this value is nonzero, any new API added since the last
+     * officially published {@link #sdkNumber API level} is only guaranteed to be present
+     * on that specific preview revision. For example, an API <code>Activity.fooBar()</code>
+     * might be present in preview revision 1 but renamed or removed entirely in
+     * preview revision 2, which may cause an app attempting to call it to crash
+     * at runtime.</p>
+     *
+     * <p>Experimental apps targeting preview APIs should check this value for
+     * equality (<code>==</code>) with the preview SDK revision they were built for
+     * before using any pre-release platform APIs. Apps that detect a preview SDK revision
+     * other than the specific one they expect should fall back to using APIs from
+     * the previously published API level only to avoid unwanted runtime exceptions.
+     * </p>
+     */
+    int32 previewSdkNumber = 2;
+    /**
+     * The user-visible security patch level.
+     */
+    string securityPatch = 3;
+    /**
+    * The internal value used by the underlying source control to
+    * represent this build. E.g., a perforce changelist number or a git hash.
+    */
+    string incremental = 4;
+    /**
+    * The current development codename, or the string "REL" if this is
+    * a release build.
+    */
+    string codeName = 5;
+    /**
+    * The user-visible version string.  E.g., "1.0" or "3.4b5" or "bananas".
+    *
+    * This field is an opaque string. Do not assume that its value
+    * has any particular structure or that values of RELEASE from
+    * different releases can be somehow ordered.
+    */
+    string release = 6;
+}

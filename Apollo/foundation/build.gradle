@@ -1,0 +1,7 @@
+apply plugin: 'maven-publish'
+apply from: ext.publishPlugin
+
+dependencies {
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    api Dependencies.ANDROIDX_ANNOTATIONS
+}

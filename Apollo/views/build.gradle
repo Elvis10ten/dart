@@ -1,0 +1,24 @@
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.autofill:autofill:1.0.0"
+
+    implementation project(":foundation")
+    implementation project(":core:theme")
+    implementation project(":runtime")
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'com.hbb20:ccp:2.3.7'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.0'
+}

@@ -1,0 +1,28 @@
+apply plugin: 'maven-publish'
+
+def versionNum = "1.0.0"
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            library(MavenPublication) {
+                setGroupId ModuleConfigs.APPLICATION_ID
+                setArtifactId project.name
+                version versionNum
+                artifact bundleReleaseAar
+
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    configurations.api.allDependencies.each {
+                        if (it.version == "unspecified") {
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', ModuleConfigs.APPLICATION_ID)
+                            dependencyNode.appendNode('artifactId', it.name)
+                            dependencyNode.appendNode('version', versionNum)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

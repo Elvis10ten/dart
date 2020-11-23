@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:gravity="center"
+    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+    android:background="@drawable/bg_white_oval"
+    android:backgroundTint="@color/colorPrimary"
+    android:textColor="@android:color/white"
+    android:text="F" />

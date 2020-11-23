@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "ActivityStatsProto";
+
+message ActivityStats {
+
+    string name = 1;
+
+    Stage stage = 2;
+
+    int32 relativeTime = 3;
+
+    /**
+    * An enumeration of the lifecycle stages an activity undergoes.
+    *
+    * <p>See the {@link android.app.Activity} javadoc for detailed documentation.
+    */
+    enum Stage {
+        /** Indicates that onCreate is being called before any onCreate code executes. */
+        PRE_ON_CREATE = 0;
+
+        /** Indicates that onCreate has been called. */
+        CREATED = 1;
+
+        /** Indicates that onStart has been called. */
+        STARTED = 2;
+
+        /** Indicates that onResume has been called - activity is now visible to user. */
+        RESUMED = 3;
+
+        /** Indicates that onPause has been called - activity is no longer in the foreground. */
+        PAUSED = 4;
+
+        /** Indicates that onStop has been called - activity is no longer visible to the user. */
+        STOPPED = 5;
+
+        /** Indicates that onResume has been called - we have navigated back to the activity. */
+        RESTARTED = 6;
+
+        /** Indicates that onDestroy has been called - system is shutting down the activity. */
+        DESTROYED = 7;
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "749179683860",
+    "firebase_url": "https://fluentbuild.firebaseio.com",
+    "project_id": "fluentbuild",
+    "storage_bucket": "fluentbuild.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749179683860:android:d39b8cce12c20572231301",
+        "android_client_info": {
+          "package_name": "com.fluentbuild.apollo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749179683860-v4fj63c7kcn07tqtpis66od64tf9diid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fluentbuild.apollo",
+            "certificate_hash": "c01b08390ded00f602c85a4f5eb26ad0325de9f0"
+          }
+        },
+        {
+          "client_id": "749179683860-r5bb07c3e3j4e8fhhd2cth1utlmm0tia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7HbjeXIdmOpLO1uTncC0sa_XKM2IYcWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749179683860-r5bb07c3e3j4e8fhhd2cth1utlmm0tia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

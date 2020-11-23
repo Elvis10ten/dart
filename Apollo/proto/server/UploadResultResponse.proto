@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package server;
+
+import "FileTransfer.proto";
+import "WorkSummary.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "UploadResultResponseProto";
+
+message UploadResultResponse {
+    server.ChunkRequest chunkRequest = 1;
+    work.WorkSummary workSummary = 2;
+}

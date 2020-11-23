@@ -1,0 +1,46 @@
+apply from: ext.publishPlugin
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.12"
+    }
+}
+
+apply plugin: "com.google.protobuf"
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.0.0" }
+
+    plugins {
+        javalite {
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            javalite { }
+        }
+    }
+}
+
+android {
+
+    sourceSets {
+        main {
+            proto {
+                srcDir "${rootDir.absolutePath}/proto/stats"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(":foundation")
+    api Dependencies.PROTOBUF_LITE
+}

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.fluentbuild.apollo.views.models.UiState" />
+
+        <variable
+            name="model"
+            type="com.fluentbuild.apollo.views.signup.SignupViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <include layout="@layout/logo_56" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:gravity="center_horizontal"
+                android:text="@string/signupTitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:gravity="center_horizontal"
+                android:text="@string/signupSubtitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="?colorError"
+                app:showUiErrorMessage="@{model.state}"
+                app:visible="@{(model.state instanceof UiState.Error)}"
+                tools:text="An error occurred processing your request."
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/signupFirstName"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:showInputError="@{model.firstNameError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords"
+                    android:text="@{model.firstName}"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/signupLastName"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:showInputError="@{model.lastNameError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords"
+                    android:text="@{model.lastName}"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/signupEmail"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:showInputError="@{model.emailError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:text="@{model.email}"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                android:layout_marginTop="12dp"
+                android:hint="@string/signupPassword"
+                android:enabled="@{!(model.state instanceof UiState.Loading)}"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:showInputError="@{model.passwordError}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text="@{model.password}"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/signupButton"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/signupAction"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:visible="@{!(model.state instanceof UiState.Loading)}"
+                />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                style="@style/SpinKitView.MultiplePulse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:SpinKit_Color="?colorSecondary"
+                app:visible="@{(model.state instanceof UiState.Loading)}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

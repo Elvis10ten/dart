@@ -1,0 +1,13 @@
+dependencies {
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    implementation Dependencies.ANDROIDX_ANNOTATIONS
+
+    implementation Dependencies.JAKE_TIMBER
+    implementation Dependencies.GSON
+
+    api project(":core:theme")
+    api project(":core:work")
+    api project(":foundation")
+    implementation project(":core")
+    implementation project(":runner:base")
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package tests;
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "ErrorProto";
+
+message Error {
+    string simpleName = 1;
+    string stackTrace = 2;
+}

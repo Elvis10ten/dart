@@ -1,0 +1,30 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fluentbuild.apollo.runtime">
+
+    <application>
+
+        <!-- TODO Add permissions -->
+        <service
+            android:name="com.fluentbuild.apollo.runtime.automation.AutomationProxyService"
+            android:exported="true"
+            android:process=":automation"
+            android:label="@string/labelAutomationServiceProxy"/>
+
+        <service
+            android:name="com.fluentbuild.apollo.runtime.automation.AutomationService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:process=":automation"
+            android:label="@string/labelAutomationService">
+
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/automation_service_config" />
+        </service>
+    </application>
+</manifest>

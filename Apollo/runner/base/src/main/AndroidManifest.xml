@@ -1,0 +1,12 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fluentbuild.apollo.runner">
+
+    <application>
+
+        <service
+            android:name="com.fluentbuild.apollo.BootstrapService"
+            android:exported="true"
+            />
+    </application>
+</manifest>

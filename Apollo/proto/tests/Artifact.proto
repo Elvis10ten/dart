@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tests;
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "ArtifactProto";
+
+message Artifact {
+
+    string name = 1;
+    ArtifactType type = 2;
+    int64 sizeBytes = 3;
+    string url = 4;
+}
+
+enum ArtifactType {
+    VIDEO = 0;
+    IMAGE = 1;
+    TEXT = 2;
+    ARCHIVE = 3;
+    OTHER = 4;
+}

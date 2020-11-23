@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package device;
+
+import "StorageStats.proto";
+import "BatteryStats.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "DeviceStateProto";
+
+/** Represents the current values of important variables on the device. */
+message DeviceState {
+
+    stats.BatteryStats batteryInfo = 1;
+    stats.StorageStats storageInfo = 2;
+    RamInfo ramInfo = 3;
+    int64 currentTimeMillis = 4;
+}
+
+message RamInfo {
+    /**
+    * The total memory accessible by the kernel.  This is basically the
+    * RAM size of the device, not including below-kernel fixed allocations
+    * like DMA buffers, RAM for the baseband CPU, etc.
+    */
+    int64 systemTotalSizeBytes = 1;
+
+    /**
+     * The available memory on the system.  This number should not
+     * be considered absolute: due to the nature of the kernel, a significant
+     * portion of this memory is actually in use and needed for the overall
+     * system to run well.
+     */
+    int64 systemAvailableSizeBytes = 2;
+
+    /**
+     * The threshold of {@link #availMem} at which we consider memory to be
+     * low and start killing background services and other non-extraneous
+     * processes.
+     */
+    int64 systemThresholdSizeBytes = 3;
+}

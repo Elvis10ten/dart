@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package server;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "GetWorkUpdatesRequestProto";
+
+message GetWorkUpdatesRequest {
+    string workKey = 1;
+    string deviceKey = 2;
+    int64 lastUpdatedTimestamp = 3;
+}

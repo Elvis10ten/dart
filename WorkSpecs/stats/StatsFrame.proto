@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package stats;
+
+import "VmPropsStats.proto";
+import "StorageStats.proto";
+import "ProcessStats.proto";
+import "MemoryStats.proto";
+import "BinderStats.proto";
+import "ThreadStats.proto";
+import "GcStats.proto";
+import "FrameStats.proto";
+import "ApplicationStats.proto";
+import "ActivityStats.proto";
+import "FileIoStats.proto";
+import "NetworkStats.proto";
+import "UnixProcessStats.proto";
+import "ResourceUsageStats.proto";
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "StatsFrameProto";
+
+message StatsFrame {
+
+    int64 referenceTime = 1;
+
+    stats.VmPropsStats vmPropsStats = 2;
+    stats.ProcessStats processStats = 3;
+
+    stats.StorageStats startStorageStats = 4;
+    stats.StorageStats endStorageStats = 5;
+    
+    repeated stats.MemoryStats memoryStats = 6;
+    repeated stats.BinderStats binderStats = 7;
+    repeated stats.ThreadStats threadStats = 8;
+    repeated stats.GcStats gcStats = 9;
+
+    repeated stats.FrameStats frameStats = 10;
+    repeated stats.ApplicationStats applicationStats = 11;
+    repeated stats.ActivityStats activityStats = 12;
+
+    repeated stats.FileIoStats fileIoStats = 13;
+    repeated stats.NetworkStats networkStats = 14;
+    repeated stats.UnixProcessStats unixProcessStats = 15;
+    repeated stats.ResourceUsageStats resourceUsageStats = 16;
+}

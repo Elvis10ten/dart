@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package reports;
+
+option java_package = "com.fluentbuild.reports";
+option java_outer_classname = "PerformanceReportProto";
+
+import "BinderStats.proto";
+import "FileIoStats.proto";
+import "ThreadStats.proto";
+import "GcStats.proto";
+import "UnixProcessStats.proto";
+import "MemoryStats.proto";
+import "TestSummaryProfile.proto";
+import "NetworkStats.proto";
+import "FrameStats.proto";
+
+message PerformanceReport {
+
+    repeated stats.MemoryStats memoryStats = 1;
+
+    repeated stats.BinderStats binderStats = 2;
+    repeated stats.FileIoStats fileIoStats = 3;
+
+    repeated stats.ThreadStats threadStats = 4;
+    repeated stats.GcStats gcStats = 5;
+    repeated stats.UnixProcessStats unixProcessStats = 6;
+    repeated stats.NetworkStats networkStats = 7;
+    repeated stats.FrameStats frameStats = 8;
+}

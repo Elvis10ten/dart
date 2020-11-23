@@ -1,0 +1,7 @@
+dependencies {
+    api project(":runner:base")
+    api project(":core:work")
+    api project(":core:androidtools")
+    api Dependencies.JAKE_TIMBER
+    implementation Dependencies.ANDROIDX_CORE
+}

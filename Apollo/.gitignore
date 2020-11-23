@@ -1,0 +1,23 @@
+# MAC Files
+.DS_Store
+
+# Java Class Files
+*.class
+
+# Gradle Files
+.gradle/
+/local.properties
+
+# IntelliJ Files
+*.iml
+/.idea/
+
+# Android Generated Files
+/captures
+*.dex
+build/
+.externalNativeBuild
+.navigation/
+*.log
+*.apk
+.cxx

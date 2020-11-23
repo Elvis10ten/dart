@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package reports;
+
+option java_package = "com.fluentbuild.reports";
+option java_outer_classname = "TimelineProto";
+
+message TimelineSection {
+
+    string title = 1;
+    string iconName = 2;
+    int32 relativeStartTime = 3;
+    int32 relativeEndTime = 4;
+    repeated TimelineEntry entries = 5;
+    int64 logFilePos = 6;
+}
+
+message TimelineEntry {
+
+    string text = 1;
+    TimelineType type = 2;
+}
+
+enum TimelineType {
+
+    LOG = 0;
+    STATS = 1;
+}

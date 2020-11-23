@@ -1,0 +1,27 @@
+include(
+        ":app",
+        ":presentation",
+        ":views",
+        ":runtime",
+        ":runner:base",
+        ":runner:client",
+        ":runner:server",
+        ":container",
+        ":core",
+        ":core:theme",
+        ":core:auth",
+        ":core:work",
+        ":core:persistence",
+        ":core:measurement",
+        ":core:analytics",
+        ":core:androidtools",
+        ":foundation"
+)
+rootProject.name = "Apollo"
+include ':testsample'
+
+buildCache {
+    local {
+        enabled = true
+    }
+}

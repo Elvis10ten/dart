@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package work;
+
+import "AtomicTest.proto";
+import "SampleFrequency.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkProto";
+
+message Work {
+    /**
+     * Unique key of the given work.
+     */
+    string key = 1;
+    string packageName = 18;
+    string testPackageName = 19;
+    /**
+     * Type of the test being performed.
+     */
+    TestType type = 2;
+    /**
+     * The APK under test.
+     */
+    RemoteFile payload = 3;
+    /**
+     * The max time this test execution can run before it is cancelled (default: 15m).
+     * It does not include any time necessary to prepare and clean up the target device.
+     * The timeout unit is seconds. The maximum possible testing time is 1800 seconds.
+     */
+    int32 timeout = 4;
+    /**
+     * The locale is a two-letter (ISO 639-1) or three-letter (ISO 639-3) representation of the language.
+     */
+    string locale = 5;
+    /**
+     * The default orientation of the device.
+     */
+    ScreenOrientation orientation = 6;
+
+    /**
+     * TODO: Update the comment
+     * A comma-separated, key=value map of environment variables and their desired values. The environment variables are mirrored as extra options to the am instrument -e KEY1 VALUE1 … command and passed to your test runner (typically AndroidJUnitRunner). Examples:
+    Enable code coverage and provide a directory to store the coverage results when using Android Test Orchestrator (--use-orchestrator):
+
+    --environment-variables clearPackageData=true,coverage=true,coverageFilePath=/sdcard/
+    Enable code coverage and provide a file path to store the coverage results when not using Android Test Orchestrator (--no-use-orchestrator):
+
+    --environment-variables coverage=true,coverageFile=/sdcard/coverage.ec
+     */
+    map<string, string> environmentVariables = 8;
+
+    /**
+     * Specifies the number of times a test execution should be reattempted if one or more of its test cases fail for any reason. An execution that initially fails but succeeds on any reattempt is reported as FLAKY.
+    The maximum number of reruns allowed is 10. (Default: 1, which implies one rerun.)
+     */
+    int32 numRetriesPerDevice = 9;
+    int32 numTestRetries = 27;
+
+    /**
+     * Monitor and record performance metrics: CPU, memory, and network usage. Enabled by default.
+     */
+    bool isPerformanceMonitoringEnabled = 10;
+    stats.SampleFrequency sampleFrequency = 24;
+
+    /**
+     * Enable video recording during the test. Enabled by default.
+     */
+    bool isVideoRecordingEnabled = 11;
+    /**
+     * The fully-qualified Java class name of the instrumentation test runner (default: the last name extracted from the APK manifest).
+     */
+    string testRunnerClassName = 12;
+    /**
+     * TODO: Update the comment and think of implementation
+     * A list of one or more test target filters to apply (default: run all test targets).
+     * Each target filter must be fully qualified with the package name, class name, or test annotation desired.
+     * Any test filter supported by am instrument -e … is supported. See https://developer.android.com/reference/android/support/test/runner/AndroidJUnitRunner for more information.
+     * Examples:
+    --test-targets "package com.my.package.name"
+    --test-targets "notPackage com.package.to.skip"
+    --test-targets "class com.foo.ClassName"
+    --test-targets "notClass com.foo.ClassName#testMethodToSkip"
+    --test-targets "annotation com.foo.AnnotationToRun"
+    --test-targets "size large notAnnotation com.foo.AnnotationToSkip"
+     */
+    repeated string testTargets = 13;
+    repeated tests.AtomicTest tests = 14;
+
+    /**
+     * Whether each test runs in its own Instrumentation instance with the Android Test Orchestrator (default: Orchestrator is not used, same as specifying --no-use-orchestrator).
+     * Orchestrator is only compatible with AndroidJUnitRunner v1.0 or higher.
+     * See https://developer.android.com/training/testing/junit-runner.html#using-android-test-orchestrator for more information about Android Test Orchestrator.
+     */
+    bool isIsolated = 15;
+    bool shouldClearPackageData = 16;
+    bool obscureScreen = 17;
+    bool takeWindowAutoShots = 20;
+    bool retrieveAppFiles = 21;
+    bool retrieveTestFiles = 22;
+    bool useSystemProfiler = 23;
+
+    int32 autoScreenShotFps = 25;
+    int32 autoScreenShotQuality = 26;
+}
+
+message RemoteFile {
+    string url = 1;
+    int64 sizeBytes = 2;
+    int64 lastModified = 3;
+}
+
+enum TestType {
+    INSTRUMENTATION = 0;
+}
+
+enum ScreenOrientation {
+    PORTRAIT = 0;
+    LANDSCAPE = 1;
+}

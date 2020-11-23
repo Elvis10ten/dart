@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package server;
+
+import "FindWorkRequest.proto";
+import "FindWorkResponse.proto";
+import "DelineateWorkRequest.proto";
+import "DelineateWorkResponse.proto";
+import "FileTransfer.proto";
+import "SendFileWrapper.proto";
+import "UploadResultResponse.proto";
+
+import "GetWorkUpdatesRequest.proto";
+import "GetWorkUpdatesResponse.proto";
+
+import "GetWorkDevicesRequest.proto";
+import "GetWorkDevicesResponse.proto";
+
+import "GetWorkRequest.proto";
+import "GetWorkResponse.proto";
+
+import "GetTestDetailsRequest.proto";
+import "GetTestDetailsResponse.proto";
+
+import "GetTestPerformanceRequest.proto";
+import "GetTestPerformanceResponse.proto";
+
+import "GetTestLogsRequest.proto";
+import "GetTestLogsResponse.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkServiceProto";
+
+service WorkService {
+
+    rpc GetWorkDevices(server.GetWorkDevicesRequest) returns (server.GetWorkDevicesResponse) {}
+
+    rpc GetWorkUpdates(server.GetWorkUpdatesRequest) returns (server.GetWorkUpdatesResponse) {}
+
+    rpc GetWork(server.GetWorkRequest) returns (server.GetWorkResponse) {}
+
+    rpc GetTestDetails(server.GetTestDetailsRequest) returns (server.GetTestDetailsResponse) {}
+
+    rpc GetTestPerformance(server.GetTestPerformanceRequest) returns (server.GetTestPerformanceResponse) {}
+
+    rpc GetTestLogs(server.GetTestLogsRequest) returns (server.GetTestLogsResponse) {}
+
+    //rpc AddWork(server.FetchTestPerformanceRequest) returns (server.FetchTestPerformanceResponse) {}
+
+    rpc Find(server.FindWorkRequest) returns (server.FindWorkResponse) {}
+
+    rpc Delineate(server.DelineateWorkRequest) returns (server.DelineateWorkResponse) {}
+
+    rpc UploadResult(stream server.SendFileWrapper) returns (stream server.UploadResultResponse) {}
+
+    rpc DownloadPayload(stream server.ChunkRequest) returns (stream server.SendFileWrapper) {}
+}

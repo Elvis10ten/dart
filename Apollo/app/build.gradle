@@ -1,0 +1,63 @@
+buildscript {
+
+    repositories {
+        google()
+        maven { url "https://maven.fabric.io/public" }
+    }
+
+    dependencies {
+        classpath "io.fabric.tools:gradle:1.31.2"
+    }
+}
+
+apply plugin: 'io.fabric'
+
+crashlytics {
+    enableNdk true
+}
+
+android {
+
+    defaultConfig {
+        applicationId ModuleConfigs.APPLICATION_ID
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "com.fluentbuild.apollo.runner.client.runner.AndroidXRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation Dependencies.ANDROIDX_APPCOMPAT
+    implementation Dependencies.ANDROIDX_CONSTRAINT_LAYOUT
+    implementation Dependencies.ANDROID_MATERIAL_COMPONENTS
+
+    implementation Dependencies.GSON
+    implementation project(":core")
+    implementation project(":presentation")
+    implementation project(":views")
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    implementation Dependencies.JAKE_TIMBER
+
+    testImplementation Dependencies.JUNIT
+    androidTestImplementation Dependencies.ANDROIDX_JUNITX
+    androidTestImplementation Dependencies.ANDROIDX_EXPRESSO_CORE
+    androidTestImplementation Dependencies.ANDROIDX_UI_AUTOMATOR
+    androidTestImplementation Dependencies.ANDROIDX_ORCHESTRATOR
+    androidTestImplementation project(":runner:client")
+}
+
+apply plugin: 'com.google.gms.google-services'

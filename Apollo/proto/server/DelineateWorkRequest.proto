@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package server;
+
+import "WorkCheckpoint.proto";
+import "WorkPulse.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "DelineateWorkRequestProto";
+
+message DelineateWorkRequest {
+    Type type = 1;
+    work.WorkCheckpoint checkpoint = 2;
+    work.WorkPulse pulse = 3;
+    string workKey = 4;
+    string deviceKey = 5;
+
+    enum Type {
+        PULSE = 0;
+        CHECK_POINT = 1;
+    }
+}

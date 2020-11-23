@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="aboveBottomAppBar">86dp</dimen>
+    <dimen name="largePageIcon">180dp</dimen>
+    <dimen name="primaryWideButtonHeight">64dp</dimen>
+    <dimen name="standardCardCornerRadius">12dp</dimen>
+</resources>

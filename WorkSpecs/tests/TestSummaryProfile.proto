@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package tests;
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "TestSummaryProfileProto";
+
+message TestSummaryProfile {
+
+    int32 timeToCallAppOnCreate = 1;
+    int32 appOnCreateTime = 2;
+    int32 timeToFirstActivityOnCreate = 3;
+    int32 timeToFirstActivityOnStart = 4;
+    int32 timeToFirstActivityOnResume = 5;
+
+    int32 batteryTemperatureDelta = 6;
+    int32 batteryLevelDelta = 7;
+
+    repeated LifecycleProfile activityOnCreateProfiles = 8;
+}
+
+message LifecycleProfile {
+
+    string name = 1;
+    int32 timeTaken = 2;
+}

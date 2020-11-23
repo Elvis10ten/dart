@@ -1,0 +1,83 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.12'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.71'
+    id "com.google.protobuf" version "0.8.12"
+}
+
+def workSpecsDirPath = rootDir.parent + File.separator + "WorkSpecs"
+group 'com.fluentbuild'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+def grpcVersion = "1.28.1"
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.9.2" }
+
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:$grpcVersion" }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir workSpecsDirPath + File.separator + "stats"
+            srcDir workSpecsDirPath + File.separator + "device"
+            srcDir workSpecsDirPath + File.separator + "tests"
+            srcDir workSpecsDirPath + File.separator + "work"
+            srcDir workSpecsDirPath + File.separator + "reports"
+            srcDir workSpecsDirPath + File.separator + "server"
+        }
+
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+            srcDirs workSpecsDirPath + File.separator + "shared"
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "javax.annotation:javax.annotation-api:1.2"
+    implementation 'io.grpc:grpc-netty-shaded:1.28.1'
+    implementation 'io.grpc:grpc-protobuf:1.28.1'
+    implementation 'io.grpc:grpc-stub:1.28.1'
+    implementation 'org.postgresql:postgresql:42.2.11'
+    implementation 'org.tukaani:xz:1.8'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.0.0-beta-1'
+
+    implementation 'org.jetbrains.exposed:exposed-core:0.23.1'
+    implementation 'org.jetbrains.exposed:exposed-dao:0.23.1'
+    implementation 'org.jetbrains.exposed:exposed-jdbc:0.23.1'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}

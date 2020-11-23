@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package work;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkSummaryProto";
+
+message WorkSummary {
+    string currencySymbol = 1;
+    double earnedAmount = 2;
+    int32 durationMinutes = 3;
+}

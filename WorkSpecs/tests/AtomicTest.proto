@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tests;
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "AtomicTestProto";
+
+message AtomicTest {
+    string className = 1;
+    string methodName = 2;
+    string displayName = 3;
+    string key = 4;
+}

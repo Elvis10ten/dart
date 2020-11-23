@@ -1,0 +1,32 @@
+def grpcVersion = "1.26.0"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.11"
+    }
+}
+
+apply plugin: "com.google.protobuf"
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.9.2" }
+
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:$grpcVersion" }
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java { option "lite" }
+            }
+
+            task.plugins {
+                grpc { option "lite" }
+            }
+        }
+    }
+}

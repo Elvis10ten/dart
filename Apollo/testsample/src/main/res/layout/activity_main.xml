@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="#00FF00"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textToBeChanged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/header_margin"
+        android:layout_marginTop="@dimen/header_margin"
+        android:text="@string/hello_world"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+    <EditText
+        android:id="@+id/editTextUserInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/type_something"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/changeTextBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_text"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/activityChangeTextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/open_activity_and_change_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is just a simple application under test."
+        android:layout_gravity="center_horizontal"
+        />
+
+    <fragment
+        android:id="@+id/boom"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

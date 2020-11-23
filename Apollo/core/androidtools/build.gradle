@@ -1,0 +1,7 @@
+apply from: ext.publishPlugin
+
+dependencies {
+    implementation Dependencies.JAKE_TIMBER
+    api project(":foundation")
+    api project(":runner:base")
+}

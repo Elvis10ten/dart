@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "ApplicationStatsProto";
+
+message ApplicationStats {
+
+    string name = 1;
+
+    Stage stage = 2;
+
+    int32 relativeTime = 3;
+
+    /**
+    * An enumeration of the lifecycle stages an application undergoes that can be monitored.
+    *
+    * <p>See the {@link android.app.Application} javadoc for detailed documentation.
+    */
+    enum Stage {
+        /** Indicates that onCreate is being called before any onCreate code executes. */
+        PRE_ON_CREATE = 0;
+
+        /** Indicates that onCreate has finished. */
+        CREATED = 1;
+    }
+
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package tests;
+
+import "Instrumentation.proto";
+import "Error.proto";
+import "AtomicResult.proto";
+
+option java_package = "com.fluentbuild.apollo.work.tests";
+option java_outer_classname = "RunReportProto";
+
+message RunReport {
+    InstrumentationResult instrumentationResult = 1;
+    tests.Error runError = 2;
+    string workKey = 3;
+    string deviceKey = 4;
+}
+
+message InstrumentationResult {
+    tests.Instrumentation instrumentation = 1;
+    repeated tests.AtomicResult atomicResults = 2;
+    repeated tests.AtomicResult retriedAtomicResults = 3;
+}

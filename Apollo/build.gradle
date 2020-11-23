@@ -1,0 +1,68 @@
+buildscript {
+    ext {
+        kotlin_version = '1.3.72'
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath Dependencies.ANDROID_BUILD_TOOLS
+        classpath Dependencies.KOTLIN_ANDROID_PLUGIN
+        classpath Dependencies.FIREBASE_BUILDSCRIPT
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+// Default modules configuration
+subprojects {
+    ext.publishPlugin = project.rootDir.absolutePath + "/publish_local.gradle"
+
+    if (name == "app" || name == "testsample") {
+        apply plugin: "com.android.application"
+    } else {
+        apply plugin: "com.android.library"
+    }
+
+    apply plugin: "kotlin-android"
+    apply plugin: "kotlin-kapt"
+    apply plugin: 'kotlin-android-extensions'
+
+    android {
+        compileSdkVersion ModuleConfigs.COMPILE_SDK_VERSION
+        buildToolsVersion ModuleConfigs.BUILD_TOOLS_VERSION
+
+        compileOptions {
+            sourceCompatibility = ModuleConfigs.JAVA_VERSION
+            targetCompatibility = ModuleConfigs.JAVA_VERSION
+        }
+
+        defaultConfig {
+            minSdkVersion ModuleConfigs.MINIMUM_SDK_VERSION
+            targetSdkVersion ModuleConfigs.TARGET_SDK_VERSION
+        }
+
+        lintOptions {
+            checkAllWarnings = true
+            abortOnError = true
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation Dependencies.KOTLIN_STANDARD_LIBRARY
+        testImplementation Dependencies.JUNIT
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

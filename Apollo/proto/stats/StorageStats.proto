@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "StorageStatsProto";
+
+message StorageStats {
+
+    Info internalStorage = 1;
+
+    repeated Info externalStorage = 2;
+
+    message Info {
+        int64 totalSizeBytes = 1;
+        int64 availableSizeBytes = 2;
+    }
+}

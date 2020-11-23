@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "MemoryStatsProto";
+
+message MemoryStats {
+
+    /** The proportional set size for dalvik heap.  (Doesn't include other Dalvik overhead.) */
+    int32 appDalvikPss = 1;
+
+    /** The private dirty pages used by dalvik heap. */
+    int32 appDalvikPrivateDirty = 2;
+
+    /** The shared dirty pages used by dalvik heap. */
+    int32 appDalvikSharedDirty = 3;
+
+    /** The proportional set size for the native heap. */
+    int32 appNativePss = 4;
+
+    /** The private dirty pages used by the native heap. */
+    int32 appNativePrivateDirty = 5;
+
+    /** The shared dirty pages used by the native heap. */
+    int32 appNativeSharedDirty = 6;
+
+    /** The proportional set size for everything else. */
+    int32 appOtherPss = 7;
+
+    /** The private dirty pages used by everything else. */
+    int32 appOtherPrivateDirty = 8;
+
+    /** The shared dirty pages used by everything else. */
+    int32 appOtherSharedDirty = 9;
+
+    /**
+    * The total memory accessible by the kernel.  This is basically the
+    * RAM size of the device, not including below-kernel fixed allocations
+    * like DMA buffers, RAM for the baseband CPU, etc.
+    */
+    int64 systemTotalSizeBytes = 10;
+
+    /**
+     * The available memory on the system.  This number should not
+     * be considered absolute: due to the nature of the kernel, a significant
+     * portion of this memory is actually in use and needed for the overall
+     * system to run well.
+     */
+    int64 systemAvailableSizeBytes = 11;
+
+    /**
+     * The threshold of {@link #availMem} at which we consider memory to be
+     * low and start killing background services and other non-extraneous
+     * processes.
+     */
+    int64 systemThresholdSizeBytes = 12;
+
+    int32 relativeTime = 13;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package work;
+
+import "AtomicResult.proto";
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "WorkCheckpointProto";
+
+message WorkCheckpoint {
+    repeated tests.AtomicResult results = 1;
+}

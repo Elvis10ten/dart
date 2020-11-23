@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "FrameStatsProto";
+
+message FrameStats {
+
+    string activityName = 1;
+
+    int64 animationDuration = 2;
+
+    int64 commandIssueDuration = 3;
+
+    int64 drawDuration = 4;
+
+    bool firstDrawFrame = 5;
+
+    int64 inputHandlingDuration = 6;
+
+    int64 layoutMeasureDuration = 7;
+
+    int64 swapBuffersDuration = 8;
+
+    int64 syncDuration = 9;
+
+    int64 totalDuration = 10;
+
+    int64 unknownDelayDuration = 11;
+
+    int64 intendedVSyncTimestamp = 12;
+
+    int64 vSyncTimestamp = 13;
+
+    int32 relativeTime = 14;
+}

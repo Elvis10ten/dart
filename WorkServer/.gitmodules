@@ -1,0 +1,3 @@
+[submodule "src/main/proto"]
+	path = proto
+	url = https://gitlab.com/fluentbuild/manticore.git

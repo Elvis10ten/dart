@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.fluentbuild.apollo.runtime.RuntimeState.Idle" />
+
+        <variable
+            name="moneyFormatter"
+            type="com.fluentbuild.apollo.views.utils.MoneyFormatter" />
+
+        <variable
+            name="model"
+            type="com.fluentbuild.apollo.views.home.HomeViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/profileContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground"
+                android:layout_margin="8dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/myProfileImage"
+                    android:layout_width="@dimen/profilePhotoSmallSize"
+                    android:layout_height="@dimen/profilePhotoSmallSize"
+                    android:contentDescription="@string/navigationMyProfile"
+                    app:profilePhotoUrl="@{model.profile.photoUrl}"
+                    app:placeholder="@{@drawable/ic_account_circle_40}"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:text="@{@string/walletBalance(moneyFormatter.format(model.balance))}"
+                    tools:text="$32,000↑"
+                    />
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/homeScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/aboveBottomAppBar"
+                    android:clipToPadding="false"
+                    android:clipChildren="false">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:paddingStart="@dimen/screenVerticalPadding"
+                        android:paddingEnd="@dimen/screenVerticalPadding"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:fontFamily="@string/fontFamilyNormal"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        app:html="@{@string/welcomeTitle(model.profile.firstName)}"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="@dimen/screenVerticalPadding"
+                        android:layout_marginEnd="@dimen/screenVerticalPadding"
+                        android:padding="16dp"
+                        app:visible="@{model.alert != null}"
+                        android:background="@{model.alert.type.background}">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="16dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@android:color/white"
+                            android:maxLines="7"
+                            android:ellipsize="end"
+                            android:text="@{model.alert.text}"
+                            tools:text="@string/dummyTextLong"
+                            tools:ignore="RtlSymmetry" />
+
+                        <Button
+                            android:id="@+id/alertButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:textColor="@android:color/black"
+                            android:backgroundTint="@android:color/white"
+                            android:elevation="0dp"
+                            android:text="@{model.alert.actionText}"
+                            tools:text="Enable"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_marginStart="@dimen/screenVerticalPadding"
+                        android:layout_marginEnd="@dimen/screenVerticalPadding"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/historyListTitle"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/screenVerticalPadding"
+                        android:layout_marginEnd="@dimen/screenVerticalPadding"
+                        app:cardCornerRadius="@dimen/standardCardCornerRadius">
+
+                        <com.fluentbuild.apollo.views.historylist.HistoryListView
+                            android:id="@+id/historyListView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:visible="@{!model.histories.isEmpty}"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:text="@{model.runtimeState == Idle.INSTANCE ? @string/historyListEmptyRuntimeShutdown : @string/historyListEmptyRuntimeStarted}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            app:visible="@{model.histories.isEmpty}"
+                            />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/primary_actions"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/runtimeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/bottomAppBar"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package stats;
+
+option java_package = "com.fluentbuild.apollo.measurement";
+option java_outer_classname = "ProcessStatsProto";
+
+message ProcessStats {
+
+    /**
+     * Returns the identifier of this process, which can be used with
+     * [Process.killProcess] and [Process.sendSignal]
+     */
+    int32 pid = 1;
+
+    /**
+     * Returns the identifier of this process's uid.  This is the kernel uid
+     * that the process is running under, which is the identity of its
+     * app-specific sandbox.  It is different from [Process.myUserHandle] in that
+     * a uid identifies a specific app sandbox in a specific user.
+     */
+    int32 uid = 2;
+
+    /**
+     * On some devices, the foreground process may have one or more CPU
+     * cores exclusively reserved for it.
+     * Note that the calling process must currently be running in the
+     * foreground for this method to return any cores.
+     *
+     * The CPU core(s) exclusively reserved for the foreground process will
+     * stay reserved for as long as the process stays in the foreground.
+     *
+     * As soon as a process leaves the foreground, those CPU cores will
+     * no longer be reserved for it, and will most likely be reserved for
+     * the new foreground process.
+     *
+     * This is an array of integers, indicating the CPU cores exclusively
+     * reserved for this process. The array will have length zero if no
+     * CPU cores are exclusively reserved for this process at this point
+     * in time.
+     *
+     * Only on devices running versions older than Nougat, the value is null.
+     */
+    repeated int32 exclusiveCores = 3;
+
+    /**
+     * The [SystemClock.elapsedRealtime] at which this process was started.
+     * Only on devices running versions older than Nougat, the value is equal to null.
+     */
+    int64 startElapsedRealtime = 4;
+
+    /**
+     * The [SystemClock.uptimeMillis] at which this process was started.
+     * Only on devices running versions older than Nougat, the value is equal to null.
+     */
+    int64 startUptimeMillis = 5;
+
+    /**
+     * True if the current process is a 64-bit runtime.
+     * Only on devices running versions older than Nougat, the value is equal to null.
+     */
+    bool is64Bit = 6;
+}

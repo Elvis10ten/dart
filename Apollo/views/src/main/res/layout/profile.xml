@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="moneyFormatter"
+            type="com.fluentbuild.apollo.views.utils.MoneyFormatter" />
+
+        <variable
+            name="model"
+            type="com.fluentbuild.apollo.views.profile.ProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/navigationBack"
+            android:src="@drawable/ic_arrow_back_normal_24"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/faqScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:clipToPadding="false"
+                android:clipChildren="false">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:paddingBottom="8dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:layout_marginStart="@dimen/screenVerticalPadding"
+                        android:layout_marginEnd="@dimen/screenVerticalPadding"
+                        app:contentPadding="16dp"
+                        app:cardCornerRadius="@dimen/standardCardCornerRadius">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:text="@{model.profile.fullName}"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                tools:text="Elvis Chidera"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:alpha="?alphaEmphasisMedium"
+                                android:text="@{model.profile.email}"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                tools:text="Elvis.chidera@gmail.com"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:alpha="?alphaEmphasisMedium"
+                                android:text="@{model.profile.phoneNumber}"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_horizontal"
+                                tools:text="+971555105863"
+                                />
+
+                            <Button
+                                android:id="@+id/logoutButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                style="@style/Widget.AppCompat.Button.Colored"
+                                android:text="@string/profileLogout"
+                                android:layout_gravity="center_horizontal"
+                                />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <ImageView
+                        android:id="@+id/myProfileImage"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center_horizontal"
+                        app:profilePhotoUrl="@{model.profile.photoUrl}"
+                        app:placeholder="@{@drawable/ic_account_large}"
+                        android:contentDescription="@null"
+                        android:elevation="2dp"
+                        tools:src="@drawable/ic_account_large"
+                        />
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/screenVerticalPadding"
+                    android:layout_marginEnd="@dimen/screenVerticalPadding"
+                    app:contentPadding="16dp"
+                    app:cardCornerRadius="@dimen/standardCardCornerRadius">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:text="@string/profileWallet"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                            android:text="@{@string/walletBalance(moneyFormatter.format(model.wallet.balance))}"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            />
+
+                        <Button
+                            android:id="@+id/manageWalletButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="@string/profileWalletActionManage"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

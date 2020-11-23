@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package server;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "GetTestLogsResponseProto";
+
+message GetTestLogsResponse {
+    repeated string lines = 1;
+    int32 nextOffset = 2;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- High emphasis of 87% for typography. -->
+    <item name="alphaEmphasisHigh" format="float" type="dimen">0.87</item>
+    <!-- Medium emphasis of 60% is the same for typography and icon. -->
+    <item name="alphaEmphasisMedium" format="float" type="dimen">0.6</item>
+    <!-- Disabled emphasis of 38% is the same for typography and icon. -->
+    <item name="alphaEmphasisDisabled" format="float" type="dimen">0.38</item>
+
+    <dimen name="profilePhotoSmallSize">36dp</dimen>
+    <dimen name="screenVerticalPadding">16dp</dimen>
+    <dimen name="screenHorizontalPadding">16dp</dimen>
+</resources>

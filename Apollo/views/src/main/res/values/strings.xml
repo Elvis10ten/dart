@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigationHome">Home</string>
+    <string name="navigationHistory">History</string>
+    <string name="navigationSettings">Settings</string>
+    <string name="navigationWallet">Wallet</string>
+    <string name="navigationMyProfile">My profile</string>
+
+    <string name="actionHelp">Help</string>
+    <string name="actionSettings">Settings</string>
+    <string name="actionHistory">History</string>
+
+    <string name="navigationExit">Exit</string>
+    <string name="navigationBack">Back</string>
+
+    <string name="welcomeTitle">Welcome, <![CDATA[<b>%1$s</b>]]></string>
+    <string name="startRuntimeService">Start runtime service</string>
+    <string name="cancelRuntimeService">Cancel runtime service</string>
+
+    <string name="historyListTitle">Recent jobs</string>
+    <string name="historyEarned">%1$s</string>
+    <string name="historyName">Ran for %1$s seconds</string>
+    <string name="historyListEmptyRuntimeShutdown">You haven\'t run any tests yet. Click the power button at the button to start running tests.</string>
+    <string name="historyListEmptyRuntimeStarted">You haven\'t run any tests yet.</string>
+    <string name="walletBalance">%1$s</string>
+
+    <string name="onboardingTitle">Decentralized Automation</string>
+    <string name="onboardingSubtitle">Make money <![CDATA[<b>safely</b>]]> running automated QA tests from <![CDATA[<b>trusted</b>]]> app publishers from around the world.</string>
+    <string name="onboardingActionGetStarted">Get Started</string>
+    <string name="onboardingActionFaq">FAQ</string>
+
+    <string name="faqTitle">FAQ</string>
+    <string name="faqSubtitle">Follow any of the relevant guides below or contact support.</string>
+    <string name="faqContactSupportAction">Contact support</string>
+
+    <string name="authActionVerifyPhone">Next</string>
+    <string name="authHintPhoneNumber">Phone number</string>
+
+    <string name="signupTitle">Create Account</string>
+    <string name="signupSubtitle">Quickly create an account to start using Fluentbuild</string>
+    <string name="signupFirstName">First name</string>
+    <string name="signupLastName">Last name</string>
+    <string name="signupEmail">Email</string>
+    <string name="signupPassword">Password</string>
+    <string name="signupAction">Sign up</string>
+    <string name="signupFirstNameInvalid">Please enter a valid first name</string>
+    <string name="signupLastNameInvalid">Please enter a valid last name</string>
+    <string name="signupEmailInvalid">Please enter a valid email address</string>
+    <string name="signupPasswordInvalid">Password length must be between 6 and 30 characters</string>
+
+    <string name="signInTitle">Sign in</string>
+    <string name="signInSubtitle">We will send an OTP to your phone number. Standard SMS charges may apply.</string>
+    <string name="signInInputHintPhoneNumber">Enter phone number</string>
+    <string name="signInSelectCountryCode">Select country code</string>
+    <string name="signInTermsAndPrivacy">By signing in you accept the <a href="http://www.fluentbuild.com/terms">Terms of Service</a> and <a href="http://www.fluentbuild.com/privacy">Privacy Policy</a></string>
+    <string name="signInAction">Continue</string>
+    <string name="verifyPhoneAction">Verify</string>
+    <string name="verifyPhoneTitle">OTP Verification</string>
+    <string name="verifyPhoneSubtitle">Enter the OTP sent to %1$s</string>
+    <string name="verifyInputHintOtp">Otp</string>
+    <string name="otpInvalid">OTP is invalid. Must be a number with at least 4 digits.</string>
+    <string name="phoneNumberInvalid">The phone number you entered is invalid</string>
+
+    <string name="wizardActionSkip">Skip</string>
+    <string name="wizardTitleProvision">Provision Device</string>
+    <string name="wizardDescriptionProvision">Create a work profile on your device.\n\nThis uses Android container technology to ensure maximum security.\n\nApps installed inside this work profile cannot access your personal apps or data.</string>
+    <string name="wizardActionProvision">Start</string>
+    <string name="wizardTitleAccessibilityService">Enable Automator</string>
+    <string name="wizardDescriptionAccessibilityService">Enable the Fluentbuild accessibility service.\n\nThis is used to automatically install apps in your isolated work profile and to run automated tests.\n\nNo personal information is collected or sent to third parties.</string>
+    <string name="wizardActionAccessibilityService">Enable</string>
+    <string name="wizardTitleMediaProjection">Enable Screen Capture</string>
+    <string name="wizardDescriptionMediaProjection">Enable screen recording to allow automated test execution to be recorded\n\nNo personal information is collected or sent to third parties.</string>
+    <string name="wizardActionMediaProjection">Enable</string>
+
+    <string name="confirmShutdownTitle">Stop job?</string>
+    <string name="confirmShutdownDescription">You have a job currently running. Do you really want to stop it?</string>
+    <string name="confirmShutdownPositiveAction">No</string>
+    <string name="confirmShutdownNegativeAction">Yes</string>
+
+    <string name="actionExpand">Expand</string>
+    <string name="actionCollapse">Collapse</string>
+
+    <string name="profileLogout">Logout</string>
+    <string name="profileWallet">Wallet</string>
+    <string name="profileWalletActionManage">Manage</string>
+
+    <string name="homeOnboardingRuntimeSwitchTitle">Engine controller</string>
+    <string name="homeOnboardingRuntimeSwitchDescription">Use this button to start or stop the runtime engine.</string>
+    <string name="dummyTextLong">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam tincidunt libero, at ornare felis gravida eu.\n\nNunc nibh neque, venenatis ac lectus eu, ullamcorper euismod felis. Vestibulum cursus consequat volutpat. Vestibulum non lacus lacinia, vulputate metus non, gravida turpis. Sed nec malesuada lorem.</string>
+</resources>

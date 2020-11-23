@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package server;
+
+option java_package = "com.fluentbuild.apollo.work";
+option java_outer_classname = "GetTestDetailsRequestProto";
+
+message GetTestDetailsRequest {
+    string workKey = 1;
+    string deviceKey = 2;
+    string testKey = 3;
+}

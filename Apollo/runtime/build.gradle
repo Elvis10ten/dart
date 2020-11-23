@@ -1,0 +1,17 @@
+dependencies {
+    implementation Dependencies.JAKE_TIMBER
+    api Dependencies.GSON
+
+    api project(":container")
+    api project(":core:auth")
+    api project(":core:persistence")
+    api project(":core:analytics")
+    api project(":runner:base")
+    api project(":runner:server")
+}
+
+android {
+    kotlinOptions {
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+}

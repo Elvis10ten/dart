@@ -1,0 +1,72 @@
+apply from: ModuleConfigs.INSTANCE.getGrpcScriptPath(rootDir)
+
+def grpcVersion = "1.28.1"
+def workSpecsDirPath = rootDir.parent + File.separator + "WorkSpecs"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.11"
+    }
+}
+
+apply plugin: "com.google.protobuf"
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:3.9.2" }
+
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:$grpcVersion" }
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java { option "lite" }
+            }
+
+            task.plugins {
+                grpc { option "lite" }
+            }
+        }
+    }
+}
+
+android {
+
+    sourceSets {
+        main {
+            java {
+                srcDirs workSpecsDirPath + File.separator + "shared"
+            }
+
+            proto {
+                srcDir workSpecsDirPath + File.separator + "stats"
+                srcDir workSpecsDirPath + File.separator + "device"
+                srcDir workSpecsDirPath + File.separator + "tests"
+                srcDir workSpecsDirPath + File.separator + "work"
+                srcDir workSpecsDirPath + File.separator + "reports"
+                srcDir workSpecsDirPath + File.separator + "server"
+            }
+        }
+    }
+
+    kotlinOptions {
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+}
+
+dependencies {
+    implementation "io.grpc:grpc-okhttp:$grpcVersion"
+    api "io.grpc:grpc-android:$grpcVersion"
+    api "io.grpc:grpc-protobuf-lite:$grpcVersion"
+    implementation "io.grpc:grpc-stub:$grpcVersion"
+    implementation Dependencies.JAVAX_ANNOTATION
+    implementation Dependencies.ANDROIDX_ANNOTATIONS
+
+    implementation project(":foundation")
+    implementation project(":core:persistence")
+    implementation Dependencies.JAKE_TIMBER
+}

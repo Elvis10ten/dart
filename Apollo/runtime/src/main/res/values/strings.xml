@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="labelAutomationService">Automation Service</string>
+    <string name="labelAutomationServiceProxy">Automation Service Proxy</string>
+    <string name="descriptionAutomationService">Useful for automation tasks</string>
+
+    <string name="runtime_checking_conditions">Checking runtime preconditions…</string>
+    <string name="runtime_automation_service_disabled">Automation service is disabled</string>
+    <string name="runtime_container_not_supported">Container tech not supported</string>
+    <string name="runtime_container_not_provisioned">Container not provisioned</string>
+    <string name="runtime_no_screen_viewer_permission">Screen viewer permission not granted</string>
+    <string name="runtime_no_installer_permission">Installer permission not granted</string>
+    <string name="runtime_conditions_check_failed">Error occurred checking runtime conditions</string>
+
+    <string name="runtime_finding_work">Finding work…</string>
+    <string name="runtime_find_work_error">Failed to find work</string>
+
+    <string name="runtime_download_work_payload_started">Downloading work payload…</string>
+    <string name="runtime_downloading_work_payload">Download File: %1$d/%2$d, Progress: %3$d%%</string>
+
+    <string name="runtime_unbundling_payload">Unbundling payload…</string>
+    <string name="runtime_unbundle_payload_error">Failed to unbundle payload</string>
+
+
+    <string name="runtime_bundling_results">Bundling results…</string>
+    <string name="runtime_bundle_results_error">Failed to bundle results</string>
+
+    <string name="runtime_upload_results_started">Uploading results…</string>
+    <string name="runtime_uploading_results">Uploading File: %1$d/%2$d, Progress: %3$d%%</string>
+    <string name="runtime_upload_results_error">Failed to upload results</string>
+
+    <string name="runtime_cleaning_up_work">Cleaning up work…</string>
+    <string name="runtime_clean_up_error">Failed to clean up work</string>
+
+    <string name="runtime_idle">Runtime Idle</string>
+    <string name="runtime_preparing_run_work">Preparing work run</string>
+    <string name="runtime_running_work">Running work</string>
+    <string name="runtime_finalizing_run_work">Finalizing work run</string>
+    <string name="runtime_installing_work">Installing work</string>
+
+    <string name="runtime_no_instrumentation_found">No instrumentation found</string>
+    <string name="runtime_test_execution_timed_out">Test execution timed out</string>
+    <string name="runtime_process_crashed">Test process crashed</string>
+    <string name="runtime_partial_run">Not all tests were run</string>
+
+    <string name="runtime_install_automation_timeout">UiAutomation timed out during work install</string>
+</resources>
