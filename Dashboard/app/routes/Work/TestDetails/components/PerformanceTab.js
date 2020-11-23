@@ -34,17 +34,16 @@ export default class PerformanceTab extends Component {
     }
 
     componentDidMount() {
-        console.log("fuck5: real fucks!!!!");
         const client = new WorkServiceClient('http://localhost:9090');
 
         const request = new GetWorkRequest()
         request.workId = "4d653109-136c-4870-b0c9-503786d644f5"
         request.deviceKey = "d3dacf1753e7728f"
 
-        console.log("fuck5:" + JSON.stringify(request));
+        console.log("dart:" + JSON.stringify(request));
         client.get(request, {}, (err, response) => {
-            console.log("Fuck5 : error: ",err)
-            console.log("Fuck5 : response: ",response.getWork())
+            console.log("dart : error: ",err)
+            console.log("dart : response: ",response.getWork())
             /*this.setState({
                 isLoading: false,
                 performanceReport: response.getPerformancereport()
@@ -116,7 +115,6 @@ export default class PerformanceTab extends Component {
 
     _getHeaderRow(title) {
         this.position += 1;
-        console.log("fuck: " + this.position);
         return (
             <HeaderRow
                 no={ this.position }
